@@ -1,0 +1,217 @@
+@import "layout.css";
+@import "navbar.css";
+@import "footer.css";
+
+/* grid container */
+
+#body-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(30px, auto);
+  gap: 6px;
+  grid-template-areas:
+  "nav nav"
+  "post-panel post-panel"
+  "news-letter news-letter"
+  "first-post second-post"
+  "third-post fourth-post"
+  "post-5 fourth-post"
+  "ft ft";
+}
+
+@media (min-width: 600px) {
+  #body-panel {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 60px auto auto auto 30px;
+    gap: 6px;
+    grid-template-areas:
+    "nav nav nav nav"
+    "post-panel post-panel first-post first-post"
+    "post-panel post-panel second-post second-post"
+    "third-post news-letter news-letter fourth-post"
+    "ft ft ft ft";
+  }
+}
+
+/* content */
+
+#post-panel {
+  grid-area: post-panel;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/Ferrari.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #fffaf0;
+}
+
+.blog-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fffaf0;
+  min-height: 160px;
+}
+
+#first-post {
+  grid-area: first-post;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/Mercedes-Benz.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+#second-post {
+  grid-area: second-post;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/Maserati.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+#third-post {
+  grid-area: third-post;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/Audi.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+#fourth-post {
+  grid-area: fourth-post;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/Range-Rover.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* tile styling */
+
+.post-font {
+  background-color: rgba(0, 0, 0, 0.5);
+  min-width: 60%;
+  max-width: 500px;
+  padding: 10px 20px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.link {
+  outline: none;
+  text-decoration: none;
+  color: #fffaf0;
+}
+
+.link:visited {
+  color: #fffaf0;
+}
+
+.link:hover {
+  color: #F6AA1C;
+}
+
+.Autor-date {
+  text-align: center;
+}
+
+@media (min-width: 600px) and (max-width: 1200px) {
+  .blog-post h4 {
+    font-size: 1.5em;
+  }
+
+  .post .Autor-date {
+    font-size: 0.8em;
+  }
+
+  .post-font {
+    padding: 5px 15px;
+    margin: 5px;
+  }
+}
+
+/* newsletter */
+
+#news-letter {
+  grid-area: news-letter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-letter-box {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 5px;
+}
+
+.news-letter-panel{
+  width: 30%;
+}
+
+input[type=text], input[type=submit] {
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 5px;
+  border: 1px solid #fffaf0;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  background-color: #e54b4b;
+  border: 2px solid #e54b4b;
+  color: #fffaf0;
+  transition: all 0.3s;
+  border: none;
+}
+
+input[type=submit]:hover {
+  background-color: transparent;
+  border: 2px solid #e54b4b;
+  color: #e54b4b;
+  transform: scale(0.9);
+}
+
+@media (min-width: 600px) and (max-width: 780px) {
+  .news-letter-box {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  .news-letter-panel{
+    width: 40%;
+  }
+
+  input[type=submit] {
+    font-size: 0.9em;
+  }
+}
